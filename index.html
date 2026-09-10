@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PlanMyEvent Sri Lanka | Premier Event Planners & Vendors Directory</title>
+  <meta name="description" content="Discover, compare, and hire verified Sri Lankan event planners for weddings, corporate galas, birthday celebrations, and concerts in Colombo, Kandy, Galle, and island-wide." />
+  
+  <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" aria-label="Platform Announcement">
+    <div class="container announcement-content">
+      <div class="announcement-left">
+        <span class="badge-pill pulse"><i class="fa-solid fa-sparkles"></i> Sri Lanka</span>
+        <span>Looking for an event planner or vendor? <strong>Register as a Client for Free</strong> or upgrade to <strong>Premium Planner</strong> for direct bookings!</span>
+      </div>
+      <a href="#registerSection" class="announcement-link" id="announcementCta">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </aside>
+
+  <!-- Main Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="#" class="brand-logo" aria-label="PlanMyEvent Home">
+        <div class="logo-icon">
+          <i class="fa-solid fa-calendar-check"></i>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">PlanMy<span class="highlight">Event</span></span>
+          <span class="logo-tagline">Sri Lanka Directory</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Search & Dropdown -->
+      <div class="nav-search-wrapper">
+        <div class="nav-search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="quickNavSearch" placeholder="Search planners, venues, or cities (e.g. Colombo, Kandy)..." aria-label="Quick search planners" />
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-menu" id="navMenu" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#categoriesSection" class="nav-link">Categories</a></li>
+          <li><a href="#directorySection" class="nav-link">Browse Planners</a></li>
+          <li><a href="#howItWorks" class="nav-link">How It Works</a></li>
+          <li><a href="#pricingInfo" class="nav-link">Membership</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Dark / Light Mode Toggle Button -->
+          <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark/light theme" title="Toggle Theme">
+            <i class="fa-solid fa-moon theme-icon-moon"></i>
+            <i class="fa-solid fa-sun theme-icon-sun"></i>
+          </button>
+
+          <!-- Planner Dashboard / Portal Button -->
+          <button class="btn btn-portal-nav" id="openPlannerPortalBtn" title="Open Planner Dashboard & Availability Manager">
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>Planner Portal</span>
+            <span class="portal-badge-count" id="navPendingBookingsCount" style="display: none;">0</span>
+          </button>
+
+          <!-- Guest Actions (Shown when not logged in) -->
+          <div class="guest-nav-actions" id="guestNavActions">
+            <button class="btn btn-outline" id="openRegisterModalBtn">
+              <i class="fa-solid fa-user-plus"></i> Register
+            </button>
+            <button class="btn btn-primary" id="openLoginModalBtn">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+            </button>
+          </div>
+
+          <!-- User Session Widget (Shown when logged in as Client or Planner) -->
+          <div class="user-session-widget" id="userSessionWidget" style="display: none;">
+            <div class="user-info-pill" id="userProfileBadge">
+              <div class="user-avatar-dot"><i class="fa-solid fa-user-check"></i></div>
+              <div class="user-name-text">
+                <span class="user-display-name" id="userDisplayName">Kasun</span>
+                <span class="user-role-badge" id="userRoleBadge">Client</span>
+              </div>
+            </div>
+            <button class="btn btn-logout-icon" id="logoutBtn" title="Sign Out" aria-label="Sign Out">
+              <i class="fa-solid fa-arrow-right-from-bracket"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="heroSection">
+      <div class="hero-overlay"></div>
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-shield-check"></i> Sri Lanka's #1 Verified Event Planners Directory
+          </div>
+          <h1 class="hero-title">
+            Make Your Dream Event <br />
+            <span class="gradient-text">Unforgettable & Effortless</span>
+          </h1>
+          <p class="hero-subtitle">
+            Find, compare, and book top-rated event planners for Poruwa ceremonies, church weddings, corporate galas, birthdays, and music festivals across Sri Lanka.
+          </p>
+
+          <!-- Search Filter Bar -->
+          <div class="hero-search-box">
+            <form id="heroSearchForm" class="search-form" onsubmit="return false;">
+              <!-- Location Input -->
+              <div class="search-field">
+                <label for="heroLocationInput"><i class="fa-solid fa-location-dot"></i> City / Region</label>
+                <input type="text" id="heroLocationInput" placeholder="e.g. Colombo, Kandy, Galle, Negombo" />
+              </div>
+
+              <div class="search-divider"></div>
+
+              <!-- Category Dropdown -->
+              <div class="search-field">
+                <label for="heroCategorySelect"><i class="fa-solid fa-tags"></i> Event Category</label>
+                <select id="heroCategorySelect">
+                  <option value="">All Categories</option>
+                  <option value="Weddings">Weddings & Poruwa</option>
+                  <option value="Birthdays">Birthdays & Anniversaries</option>
+                  <option value="Corporate Events">Corporate Events & Summits</option>
+                  <option value="Concerts">Concerts & Festivals</option>
+                  <option value="Private Parties">Private Parties & Dinners</option>
+                </select>
+              </div>
+
+              <div class="search-divider"></div>
+
+              <!-- Budget Range Dropdown (Sri Lankan Rupees LKR) -->
+              <div class="search-field">
+                <label for="heroBudgetSelect"><i class="fa-solid fa-coins"></i> Budget Range</label>
+                <select id="heroBudgetSelect">
+                  <option value="">Any Budget</option>
+                  <option value="budget">Budget (Under Rs. 100,000)</option>
+                  <option value="moderate">Moderate (Rs. 100,000 - Rs. 300,000)</option>
+                  <option value="luxury">Luxury (Rs. 300,000+)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary search-submit-btn" id="heroSearchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i> Find Planners
+              </button>
+            </form>
+          </div>
+
+          <!-- Trust & Social Proof Badges -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-number">4.9/5</span>
+              <span class="metric-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+              <span class="metric-label">Average Client Rating</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-number">12,500+</span>
+              <span class="metric-label">Events Hosted in Sri Lanka</span>
+            </div>
+            <div class="metric-divider"></div>
+            <div class="metric-item">
+              <span class="metric-number">100%</span>
+              <span class="metric-label">Verified Client Reviews</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categoriesSection">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-eyebrow">Curated Specializations</span>
+            <h2 class="section-title">Explore by Event Category</h2>
+          </div>
+          <p class="section-description">
+            Whatever you are celebrating in Sri Lanka, find experienced planners with dedicated portfolios tailored to your event type.
+          </p>
+        </div>
+
+        <div class="categories-grid" id="categoriesGrid">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured & Directory Planners Section -->
+    <section class="directory-section" id="directorySection">
+      <div class="container">
+        <!-- Section Controls / Filter Bar -->
+        <div class="directory-controls">
+          <div class="controls-left">
+            <span class="section-eyebrow">Top-Rated Professionals</span>
+            <h2 class="section-title">Browse Verified Event Planners</h2>
+            <p class="results-count" id="resultsCount">Showing verified planners in Sri Lanka</p>
+          </div>
+
+          <!-- Filter & Sort Toolbar -->
+          <div class="controls-toolbar">
+            <!-- Filter by Tier Pills -->
+            <div class="tier-filter-group" role="group" aria-label="Membership Filter">
+              <button class="tier-btn active" data-tier="all">All Planners</button>
+              <button class="tier-btn" data-tier="premium">
+                <i class="fa-solid fa-crown"></i> Premium Only
+              </button>
+              <button class="tier-btn" data-tier="standard">Standard</button>
+            </div>
+
+            <!-- Sort By Dropdown -->
+            <div class="sort-wrapper">
+              <label for="sortSelect"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort by:</label>
+              <select id="sortSelect" class="sort-select">
+                <option value="rating-desc">Highest Rated (★ 5 to 1)</option>
+                <option value="reviews-desc">Most Reviews</option>
+                <option value="price-asc">Starting Price: Low to High</option>
+                <option value="price-desc">Starting Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter tags row -->
+        <div class="active-filters-bar" id="activeFiltersBar" style="display: none;">
+          <span class="filter-label">Active filters:</span>
+          <div class="filter-chips" id="filterChips"></div>
+          <button class="btn-clear-all" id="clearAllFiltersBtn">Clear All</button>
+        </div>
+
+        <!-- Planners Grid (Cards with Smooth Expandable Details) -->
+        <div class="planners-grid" id="plannersGrid">
+          <!-- Dynamic planner cards with smooth expandable details will be injected here -->
+        </div>
+
+        <!-- Empty State (hidden by default) -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+          <div class="empty-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h3>No Event Planners Found</h3>
+          <p>We couldn't find any planners matching your current filter criteria. Try resetting the filters or searching for another Sri Lankan city or category.</p>
+          <button class="btn btn-primary" id="resetFiltersBtn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Comparison Section (Planners Workflow Info) -->
+    <section class="membership-section" id="pricingInfo">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">For Event Professionals</span>
+          <h2 class="section-title">Grow Your Event Planning Business</h2>
+          <p class="section-description centered">
+            Register your event planning company on PlanMyEvent Sri Lanka. Reach thousands of event hosts looking for professional services every month.
+          </p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Standard Tier Card -->
+          <div class="pricing-card standard-card">
+            <div class="pricing-header">
+              <span class="tier-badge standard">Standard Planner</span>
+              <h3 class="tier-name">Standard Listing</h3>
+              <p class="tier-desc">Ideal for emerging planners seeking reliable lead requests and verified visibility across Sri Lanka.</p>
+              <div class="price-box">
+                <span class="currency">Rs.</span>
+                <span class="amount">15,000</span>
+                <span class="period">/ one-time registration</span>
+              </div>
+            </div>
+            <ul class="tier-features">
+              <li><i class="fa-solid fa-check text-success"></i> Full Profile & Portfolio Gallery</li>
+              <li><i class="fa-solid fa-check text-success"></i> Listed in Directory by Sri Lankan Category</li>
+              <li><i class="fa-solid fa-check text-success"></i> Customer Rating & Verified Reviews</li>
+              <li><i class="fa-solid fa-check text-success"></i> Customer Inquiry / Lead Forwarding Form</li>
+              <li class="feature-disabled"><i class="fa-solid fa-xmark text-muted"></i> Direct Phone Number Display (Hidden)</li>
+              <li class="feature-disabled"><i class="fa-solid fa-xmark text-muted"></i> Featured Gold Badge & Top Placement</li>
+              <li class="feature-disabled"><i class="fa-solid fa-xmark text-muted"></i> Direct WhatsApp / Click-to-Call Link</li>
+            </ul>
+            <button class="btn btn-outline-full select-tier-btn" data-tier-select="Standard">
+              Register as Standard Planner
+            </button>
+          </div>
+
+          <!-- Premium Tier Card -->
+          <div class="pricing-card premium-card popular">
+            <div class="popular-ribbon">
+              <i class="fa-solid fa-sparkles"></i> Highest Conversion
+            </div>
+            <div class="pricing-header">
+              <span class="tier-badge premium">
+                <i class="fa-solid fa-crown"></i> Premium Member
+              </span>
+              <h3 class="tier-name">Premium Pro Listing</h3>
+              <p class="tier-desc">For established event designers in Colombo, Kandy, Galle, and island-wide who want direct customer calls and maximum exposure.</p>
+              <div class="price-box">
+                <span class="currency">Rs.</span>
+                <span class="amount">30,000</span>
+                <span class="period">/ one-time registration</span>
+              </div>
+            </div>
+            <ul class="tier-features">
+              <li><i class="fa-solid fa-check text-success"></i> <strong>Direct Phone Number Publicly Displayed</strong></li>
+              <li><i class="fa-solid fa-check text-success"></i> <strong>Instant "Call Now" & WhatsApp Direct Buttons</strong></li>
+              <li><i class="fa-solid fa-check text-success"></i> <strong>Verified Gold Premium Badge & Priority Placement</strong></li>
+              <li><i class="fa-solid fa-check text-success"></i> Full Profile & Extended HD Portfolio Gallery</li>
+              <li><i class="fa-solid fa-check text-success"></i> Customer Rating & Review Management</li>
+              <li><i class="fa-solid fa-check text-success"></i> Automated Inquiry Lead Forwarding to Your Email</li>
+              <li><i class="fa-solid fa-check text-success"></i> Up to 3.5x More Direct Inquiries on Average</li>
+            </ul>
+            <button class="btn btn-premium-full select-tier-btn" data-tier-select="Premium">
+              <i class="fa-solid fa-crown"></i> Join as Premium Planner
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="howItWorks">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-eyebrow">Simple Workflow</span>
+          <h2 class="section-title">How PlanMyEvent Connects You</h2>
+          <p class="section-description centered">
+            A seamless experience whether you are planning a traditional wedding, corporate conference, or birthday celebration in Sri Lanka.
+          </p>
+        </div>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-icon-wrapper">
+              <div class="step-number">1</div>
+              <i class="fa-solid fa-compass"></i>
+            </div>
+            <h4 class="step-title">Discover & Filter</h4>
+            <p class="step-text">Search by category, city (Colombo, Kandy, Galle, etc.), budget in LKR, and verified client ratings.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon-wrapper">
+              <div class="step-number">2</div>
+              <i class="fa-solid fa-images"></i>
+            </div>
+            <h4 class="step-title">Review Portfolios</h4>
+            <p class="step-text">Explore high-resolution galleries of past Poruwa rituals, banquets, and beachside receptions.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon-wrapper">
+              <div class="step-number">3</div>
+              <i class="fa-solid fa-phone-volume"></i>
+            </div>
+            <h4 class="step-title">Direct Call or Inquiry</h4>
+            <p class="step-text">Call Premium planners directly via mobile/WhatsApp, or submit an inquiry quote form to Standard planners.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-icon-wrapper">
+              <div class="step-number">4</div>
+              <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+            <h4 class="step-title">Rate & Review</h4>
+            <p class="step-text">Once your event concludes, leave a verified star rating and review to help fellow Sri Lankan hosts.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-banner-section" id="registerSection">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-content">
+            <span class="badge-pill light"><i class="fa-solid fa-rocket"></i> Get Started Today</span>
+            <h2 class="cta-title">Planning an Event or Offering Services?</h2>
+            <p class="cta-description">
+              Join thousands of Sri Lankan hosts finding top vendors, or register your planning firm to showcase your portfolio and receive direct bookings.
+            </p>
+            <div class="cta-buttons">
+              <button class="btn btn-light-solid btn-lg" id="ctaRegisterClientBtn">
+                <i class="fa-solid fa-user-plus"></i> Free Client Sign Up
+              </button>
+              <button class="btn btn-outline-light btn-lg" id="ctaJoinPlannerBtn">
+                <i class="fa-solid fa-briefcase"></i> Register as a Planner
+              </button>
+            </div>
+          </div>
+          <div class="cta-visual">
+            <div class="cta-stats-box">
+              <div class="stat-pill"><i class="fa-solid fa-heart text-danger"></i> 98% Host Satisfaction</div>
+              <div class="stat-pill"><i class="fa-solid fa-bolt text-warning"></i> Instant WhatsApp & Direct Calls</div>
+              <div class="stat-pill"><i class="fa-solid fa-award text-success"></i> Free Client Accounts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col brand-col">
+        <div class="brand-logo footer-logo">
+          <div class="logo-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+          <div class="logo-text">
+            <span class="logo-name">PlanMy<span class="highlight">Event</span></span>
+            <span class="logo-tagline">Sri Lanka</span>
+          </div>
+        </div>
+        <p class="footer-bio">
+          PlanMyEvent Sri Lanka connects couples, corporate organizations, and party hosts with trusted event planners, Poruwa specialists, and decor artists across the island.
+        </p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Event Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#" data-footer-category="Weddings">Wedding & Poruwa Planners</a></li>
+          <li><a href="#" data-footer-category="Corporate Events">Corporate Galas & Summits</a></li>
+          <li><a href="#" data-footer-category="Birthdays">Birthday & Anniversaries</a></li>
+          <li><a href="#" data-footer-category="Concerts">Concerts & Music Festivals</a></li>
+          <li><a href="#" data-footer-category="Private Parties">Private Dinners & Beach Soirées</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Registration & Accounts</h4>
+        <ul class="footer-links">
+          <li><a href="#" id="footerClientRegisterLink">Free Client Registration</a></li>
+          <li><a href="#" id="footerJoinStandard">Join as Standard Planner (Rs. 15,000)</a></li>
+          <li><a href="#" id="footerJoinPremium">Join as Premium Member (Rs. 30,000)</a></li>
+          <li><a href="#pricingInfo">Membership Benefits</a></li>
+          <li><a href="#">Planner Code of Conduct</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-heading">Locations & Support</h4>
+        <ul class="footer-links">
+          <li><a href="#" data-footer-location="Colombo">Colombo Planners</a></li>
+          <li><a href="#" data-footer-location="Kandy">Kandy Planners</a></li>
+          <li><a href="#" data-footer-location="Galle">Galle & Southern Coast</a></li>
+          <li><a href="#">Help Center & FAQ</a></li>
+          <li><a href="#">Contact Sri Lanka Hotline</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p>&copy; 2026 PlanMyEvent Sri Lanka. All rights reserved.</p>
+        <p class="footer-note">Hotline: <strong>+94 11 234 5678</strong> | info@planmyevent.lk</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================== -->
+  <!-- MODALS SYSTEM -->
+  <!-- ============================================== -->
+
+  <!-- 1. Full Planner Profile Modal -->
+  <div class="modal-backdrop" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profilePlannerName" style="display: none;">
+    <div class="modal-container profile-modal-container">
+      <button class="modal-close-btn" id="closeProfileModalBtn" aria-label="Close profile modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <!-- Scrollable Profile Content -->
+      <div class="profile-modal-body" id="profileModalContent">
+        <!-- Dynamically injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Customer Inquiry / Lead Generation Form Modal -->
+  <div class="modal-backdrop" id="inquiryModal" role="dialog" aria-modal="true" aria-labelledby="inquiryModalTitle" style="display: none;">
+    <div class="modal-container form-modal-container">
+      <button class="modal-close-btn" id="closeInquiryModalBtn" aria-label="Close inquiry modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-header-icon">
+          <i class="fa-solid fa-envelope-open-text"></i>
+        </div>
+        <div>
+          <span class="modal-eyebrow">Customer Inquiry Form</span>
+          <h3 class="modal-title" id="inquiryModalTitle">Request an Event Quote</h3>
+          <p class="modal-subtitle" id="inquiryPlannerTarget">Connecting with: <strong>Planner Name</strong></p>
+        </div>
+      </div>
+
+      <form id="customerInquiryForm" class="modal-form">
+        <input type="hidden" id="inquiryPlannerId" value="" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inquiryClientName">Your Full Name *</label>
+            <input type="text" id="inquiryClientName" required placeholder="e.g. Kasun Perera" />
+          </div>
+          <div class="form-group">
+            <label for="inquiryClientEmail">Email Address *</label>
+            <input type="email" id="inquiryClientEmail" required placeholder="kasun.perera@example.lk" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inquiryClientPhone">Sri Lankan Contact Number *</label>
+            <input type="tel" id="inquiryClientPhone" required placeholder="+94 77 123 4567 or 077 123 4567" />
+          </div>
+          <div class="form-group">
+            <label for="inquiryEventType">Event Category *</label>
+            <select id="inquiryEventType" required>
+              <option value="Wedding">Wedding & Poruwa Ceremony</option>
+              <option value="Birthday Party">Birthday / Anniversary</option>
+              <option value="Corporate Event">Corporate Conference / Gala</option>
+              <option value="Concert & Festival">Concert & Music Festival</option>
+              <option value="Private Dinner">Private Dinner / Beach Soirée</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="inquiryEventDate">Approximate Event Date *</label>
+            <input type="date" id="inquiryEventDate" required />
+          </div>
+          <div class="form-group">
+            <label for="inquiryGuestCount">Estimated Guest Count</label>
+            <input type="number" id="inquiryGuestCount" min="5" placeholder="e.g. 250 guests" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="inquiryBudget">Estimated Planning Budget (LKR) *</label>
+          <select id="inquiryBudget" required>
+            <option value="">Select your estimated budget in LKR...</option>
+            <option value="Under Rs. 100,000">Under Rs. 100,000</option>
+            <option value="Rs. 100,000 - Rs. 250,000">Rs. 100,000 - Rs. 250,000</option>
+            <option value="Rs. 250,000 - Rs. 500,000">Rs. 250,000 - Rs. 500,000</option>
+            <option value="Rs. 500,000 - Rs. 1,000,000">Rs. 500,000 - Rs. 1,000,000</option>
+            <option value="Rs. 1,000,000+">Rs. 1,000,000+ (Grand Luxury / Large Scale)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="inquiryNotes">Event Vision & Venue Location *</label>
+          <textarea id="inquiryNotes" rows="4" required placeholder="Tell the planner about your desired venue (e.g. Colombo hotel, Galle beach resort), Poruwa traditions, theme, and special requirements..."></textarea>
+        </div>
+
+        <div class="form-notice">
+          <i class="fa-solid fa-lock"></i> Your information is sent securely to this planner. You will receive an SMS/email confirmation with your request copy.
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancelInquiryBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submitInquiryBtn">
+            <i class="fa-solid fa-paper-plane"></i> Send Inquiry to Planner
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Unified Registration Modal: Role Selection [Client (Free) vs. Event Planner] -->
+  <div class="modal-backdrop" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle" style="display: none;">
+    <div class="modal-container form-modal-container register-modal-container">
+      <button class="modal-close-btn" id="closeJoinModalBtn" aria-label="Close registration modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-header-icon gold-bg" id="modalHeaderIcon">
+          <i class="fa-solid fa-user-plus"></i>
+        </div>
+        <div>
+          <span class="modal-eyebrow" id="regModalEyebrow">Create an Account</span>
+          <h3 class="modal-title" id="joinModalTitle">Register on PlanMyEvent Sri Lanka</h3>
+          <p class="modal-subtitle" id="regModalSubtitle">Select whether you are a client looking for services or an event planner offering services.</p>
+        </div>
+      </div>
+
+      <!-- Role Selection Tabs (Task 1: Role Switcher) -->
+      <div class="role-selector-bar">
+        <button type="button" class="role-tab-btn active" id="tabRoleClient" data-role="client">
+          <i class="fa-solid fa-user"></i>
+          <div class="tab-text">
+            <span class="tab-title">Client (Free)</span>
+            <span class="tab-sub">Planning an event / hiring vendors</span>
+          </div>
+          <span class="role-pill-free">100% Free</span>
+        </button>
+
+        <button type="button" class="role-tab-btn" id="tabRolePlanner" data-role="planner">
+          <i class="fa-solid fa-briefcase"></i>
+          <div class="tab-text">
+            <span class="tab-title">Event Planner</span>
+            <span class="tab-sub">Directory listing & client leads</span>
+          </div>
+          <span class="role-pill-pro">Vendor</span>
+        </button>
+      </div>
+
+      <!-- Form A: Client Free Registration Form -->
+      <form id="clientRegistrationForm" class="modal-form client-reg-form">
+        <div class="client-free-callout">
+          <div class="free-callout-icon"><i class="fa-solid fa-gift"></i></div>
+          <div>
+            <strong>Free Client Membership:</strong>
+            <p>Directly contact verified Sri Lankan event planners, request instant quotes, save your favorite portfolios, and leave reviews completely free with zero hidden charges.</p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientFullName">Full Name *</label>
+            <input type="text" id="clientFullName" required placeholder="e.g. Kasun Wickramasinghe" />
+          </div>
+          <div class="form-group">
+            <label for="clientEmail">Email Address *</label>
+            <input type="email" id="clientEmail" required placeholder="kasun.w@example.lk" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="clientPassword">Create Password *</label>
+            <input type="password" id="clientPassword" required minlength="6" placeholder="At least 6 characters" />
+          </div>
+          <div class="form-group">
+            <label for="clientPhone">Sri Lankan Contact Number *</label>
+            <input type="tel" id="clientPhone" required placeholder="+94 77 123 4567 or 077 123 4567" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="clientPreferredEvent">Primary Event Type You Are Planning *</label>
+          <select id="clientPreferredEvent" required>
+            <option value="Wedding & Poruwa">Wedding & Poruwa Ceremony</option>
+            <option value="Birthday & Anniversary">Birthday Celebration / Milestone Anniversary</option>
+            <option value="Corporate Event">Corporate Conference / Gala Banquet</option>
+            <option value="Concert & Festival">Concert, Live Music & Beach Festival</option>
+            <option value="Private Dinner">Private Dinner / Beachfront Soirée</option>
+          </select>
+        </div>
+
+        <div class="form-notice">
+          <i class="fa-solid fa-shield-check text-success"></i> <strong>Free Forever Guarantee:</strong> You will never be asked for payment details to search, message, or hire planners.
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancelClientJoinBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submitClientRegBtn">
+            <i class="fa-solid fa-user-check"></i> Complete Free Registration
+          </button>
+        </div>
+      </form>
+
+      <!-- Form B: Event Planner Registration Form (Shown when Planner tab is selected) -->
+      <form id="plannerRegistrationForm" class="modal-form planner-reg-form" style="display: none;">
+        <!-- Membership Tier Selection Tabs -->
+        <div class="form-group">
+          <label class="form-label-bold">Select Your Membership Tier *</label>
+          <div class="tier-selector-radio">
+            <label class="tier-radio-option" id="radioOptionStandard">
+              <input type="radio" name="membershipTier" value="Standard" checked />
+              <div class="tier-radio-content">
+                <div class="radio-top">
+                  <span class="tier-badge standard">Standard</span>
+                  <span class="tier-price">Rs. 15,000 Fee</span>
+                </div>
+                <p class="radio-desc">Directory listing, lead quote form. Phone number is hidden from public view.</p>
+              </div>
+            </label>
+
+            <label class="tier-radio-option premium-option" id="radioOptionPremium">
+              <input type="radio" name="membershipTier" value="Premium" />
+              <div class="tier-radio-content">
+                <div class="radio-top">
+                  <span class="tier-badge premium"><i class="fa-solid fa-crown"></i> Premium</span>
+                  <span class="tier-price">Rs. 30,000 Fee</span>
+                </div>
+                <p class="radio-desc"><strong>Direct Phone Visible</strong> to clients, gold badge, WhatsApp link, 3x more bookings.</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regBusinessName">Company / Business Name *</label>
+            <input type="text" id="regBusinessName" required placeholder="e.g. Ceylon Royal Weddings & Events" />
+          </div>
+          <div class="form-group">
+            <label for="regContactPerson">Lead Planner Name *</label>
+            <input type="text" id="regContactPerson" required placeholder="e.g. Dilshan Senanayake" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regEmail">Email Address *</label>
+            <input type="email" id="regEmail" required placeholder="dilshan@ceylonroyal.lk" />
+          </div>
+          <div class="form-group">
+            <label for="regPhone">Sri Lankan Phone Number *</label>
+            <input type="tel" id="regPhone" required placeholder="+94 77 890 1234 or 077 890 1234" />
+            <small class="form-hint" id="phoneVisibilityHint">Visible directly on profile and cards if Premium tier is selected.</small>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regCategory">Primary Event Category *</label>
+            <select id="regCategory" required>
+              <option value="Weddings">Weddings & Poruwa</option>
+              <option value="Birthdays">Birthdays & Anniversaries</option>
+              <option value="Corporate Events">Corporate Events</option>
+              <option value="Concerts">Concerts & Festivals</option>
+              <option value="Private Parties">Private Parties & Dinners</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="regLocation">Location / City *</label>
+            <input type="text" id="regLocation" required placeholder="e.g. Colombo 07, Kandy, Galle" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="regStartingPrice">Starting Price (Rs. LKR) *</label>
+            <input type="number" id="regStartingPrice" required min="25000" step="5000" placeholder="e.g. 150000" />
+          </div>
+          <div class="form-group">
+            <label for="regExperienceYears">Years in Business *</label>
+            <input type="number" id="regExperienceYears" required min="1" max="40" placeholder="e.g. 8" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regBio">Company Bio & Event Specialties *</label>
+          <textarea id="regBio" rows="3" required placeholder="Describe your Sri Lankan event specialties (e.g. traditional Poruwa, contemporary floral decor, luxury lighting, venue management)..."></textarea>
+        </div>
+
+        <!-- Simulated Payment Confirmation Box -->
+        <div class="registration-payment-box">
+          <div class="payment-box-header">
+            <div class="payment-title">
+              <i class="fa-solid fa-credit-card"></i> One-Time Registration Fee
+            </div>
+            <div class="payment-amount" id="regSummaryFee">Rs. 15,000 LKR</div>
+          </div>
+          <p class="payment-sub">Includes Sri Lankan directory verification, SEO indexing, and customer lead forwarding system.</p>
+          <div class="simulated-payment-badge">
+            <i class="fa-solid fa-shield-halved"></i> Simulated Sandbox Checkout &bull; Instant Directory Listing
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancelJoinBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submitRegistrationBtn">
+            <i class="fa-solid fa-check"></i> Complete Registration & Pay Fee
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Sign In Modal (Client & Planner Authentication) -->
+  <div class="modal-backdrop" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle" style="display: none;">
+    <div class="modal-container form-modal-container">
+      <button class="modal-close-btn" id="closeLoginModalBtn" aria-label="Close sign in modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-header-icon">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </div>
+        <div>
+          <span class="modal-eyebrow">Account Portal</span>
+          <h3 class="modal-title" id="loginModalTitle">Sign In to PlanMyEvent</h3>
+          <p class="modal-subtitle">Access your client inquiries, saved planners, or vendor management.</p>
+        </div>
+      </div>
+
+      <form id="loginForm" class="modal-form">
+        <div class="form-group">
+          <label for="loginEmail">Email Address *</label>
+          <input type="email" id="loginEmail" required placeholder="your.email@example.lk" />
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password *</label>
+          <input type="password" id="loginPassword" required placeholder="Enter your password" />
+        </div>
+
+        <div class="demo-login-callout">
+          <span><i class="fa-solid fa-circle-info"></i> <strong>Quick Demo:</strong> Register above as a free client or click below to test roles immediately:</span>
+          <div class="demo-login-buttons">
+            <button type="button" class="btn-demo-fill" id="quickDemoSignInBtn"><i class="fa-solid fa-user"></i> Demo Client</button>
+            <button type="button" class="btn-demo-fill planner-demo-btn" id="quickDemoPlannerSignInBtn"><i class="fa-solid fa-briefcase"></i> Demo Planner (Araliya)</button>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancelLoginBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign In
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 6. Client Booking Request Modal -->
+  <div class="modal-backdrop" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle" style="display: none;">
+    <div class="modal-container form-modal-container booking-modal-container">
+      <button class="modal-close-btn" id="closeBookingModalBtn" aria-label="Close booking modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header">
+        <div class="modal-header-icon gold-bg">
+          <i class="fa-solid fa-calendar-plus"></i>
+        </div>
+        <div>
+          <span class="modal-eyebrow">Request Event Booking</span>
+          <h3 class="modal-title" id="bookingModalTitle">Book with <span id="bookingPlannerName">Planner</span></h3>
+          <p class="modal-subtitle">Reserve your preferred date and send your event specifications directly to this planner.</p>
+        </div>
+      </div>
+
+      <!-- Selected Date Highlight Banner -->
+      <div class="booking-date-banner">
+        <div class="booking-banner-icon"><i class="fa-solid fa-calendar-day"></i></div>
+        <div class="booking-banner-info">
+          <span class="banner-sub">Requested Event Date:</span>
+          <strong class="banner-date" id="bookingDisplayDate">September 25, 2026</strong>
+        </div>
+        <span class="booking-status-tag"><i class="fa-solid fa-circle-check text-success"></i> Date Available</span>
+      </div>
+
+      <form id="bookingRequestForm" class="modal-form">
+        <input type="hidden" id="bookingPlannerId" value="" />
+        <input type="hidden" id="bookingDateInput" value="" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookingClientName">Your Full Name *</label>
+            <input type="text" id="bookingClientName" required placeholder="e.g. Kasun Wickramasinghe" />
+          </div>
+          <div class="form-group">
+            <label for="bookingClientEmail">Email Address *</label>
+            <input type="email" id="bookingClientEmail" required placeholder="kasun.w@example.lk" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookingClientPhone">Sri Lankan Contact Number *</label>
+            <input type="tel" id="bookingClientPhone" required placeholder="+94 77 123 4567 or 077 123 4567" />
+          </div>
+          <div class="form-group">
+            <label for="bookingEventType">Event Type *</label>
+            <select id="bookingEventType" required>
+              <option value="">Select Event Type...</option>
+              <option value="Wedding & Poruwa Ceremony">Wedding & Poruwa Ceremony</option>
+              <option value="Milestone Birthday">Milestone Birthday / Anniversary</option>
+              <option value="Corporate Conference & Gala">Corporate Conference & Gala</option>
+              <option value="Concert & Live Show">Concert & Live Show</option>
+              <option value="Private Dinner & Beach Soirée">Private Dinner & Beach Soirée</option>
+              <option value="Cultural & Religious Ceremony">Cultural & Religious Ceremony</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="bookingLocation">Event Location / Venue *</label>
+            <input type="text" id="bookingLocation" required placeholder="e.g. Colombo 07, Cinnamon Grand, Galle Fort" />
+          </div>
+          <div class="form-group">
+            <label for="bookingGuestCount">Estimated Guest Count *</label>
+            <input type="number" id="bookingGuestCount" required min="10" max="10000" placeholder="e.g. 250" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="bookingBudget">Estimated Budget (LKR / Rs.) *</label>
+          <select id="bookingBudget" required>
+            <option value="">Select Budget Range...</option>
+            <option value="Under Rs. 100,000">Under Rs. 100,000</option>
+            <option value="Rs. 100,000 - Rs. 250,000">Rs. 100,000 - Rs. 250,000</option>
+            <option value="Rs. 250,000 - Rs. 500,000">Rs. 250,000 - Rs. 500,000</option>
+            <option value="Rs. 500,000 - Rs. 1,000,000">Rs. 500,000 - Rs. 1,000,000</option>
+            <option value="Rs. 1,000,000+">Rs. 1,000,000+ (Grand Luxury)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="bookingNotes">Additional Notes / Special Requests</label>
+          <textarea id="bookingNotes" rows="3" placeholder="Specify traditional requirements (Poruwa, oil lamp, drummers), sound setup, theme colors, dietary coordination, etc."></textarea>
+        </div>
+
+        <div class="form-notice">
+          <i class="fa-solid fa-clock-rotate-left"></i> Your booking request will be saved with status <strong>"Pending"</strong>. The planner will review and either Accept or contact you directly.
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" id="cancelBookingBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submitBookingBtn">
+            <i class="fa-solid fa-calendar-check"></i> Submit Booking Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. Planner Management & Availability Dashboard Modal -->
+  <div class="modal-backdrop" id="plannerDashboardModal" role="dialog" aria-modal="true" aria-labelledby="dashboardModalTitle" style="display: none;">
+    <div class="modal-container form-modal-container planner-dashboard-container">
+      <button class="modal-close-btn" id="closePlannerDashboardBtn" aria-label="Close dashboard modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header dashboard-modal-header">
+        <div class="modal-header-left">
+          <div class="modal-header-icon gold-bg">
+            <i class="fa-solid fa-briefcase"></i>
+          </div>
+          <div>
+            <span class="modal-eyebrow">Vendor Administration Portal</span>
+            <h3 class="modal-title" id="dashboardModalTitle">Planner Management & Bookings Dashboard</h3>
+            <p class="modal-subtitle">Manage date availability, accept or reject incoming client requests, and sync your calendar schedule.</p>
+          </div>
+        </div>
+
+        <!-- Planner Selector Switcher -->
+        <div class="dashboard-planner-selector">
+          <label for="dashboardPlannerSelect"><i class="fa-solid fa-store"></i> Active Planner:</label>
+          <select id="dashboardPlannerSelect" class="form-select-sm" aria-label="Select Planner to manage">
+            <!-- Dynamically populated with registered planners -->
+          </select>
+        </div>
+      </div>
+
+      <!-- Dashboard Navigation Tabs -->
+      <div class="dashboard-tabs-bar">
+        <button type="button" class="dashboard-tab-btn active" id="tabDashBookings" data-tab="bookings">
+          <i class="fa-solid fa-inbox"></i>
+          <span>Booking Requests</span>
+          <span class="tab-badge-pending" id="tabPendingCount">0</span>
+        </button>
+        <button type="button" class="dashboard-tab-btn" id="tabDashAvailability" data-tab="availability">
+          <i class="fa-solid fa-calendar-days"></i>
+          <span>Manage Availability & Dates</span>
+        </button>
+      </div>
+
+      <!-- Dashboard Tab Body -->
+      <div class="dashboard-tab-body">
+        <!-- Tab 1: Booking Requests List -->
+        <div class="dash-tab-pane active" id="paneDashBookings">
+          <!-- Summary Metric Cards -->
+          <div class="dashboard-metrics-grid">
+            <div class="metric-card">
+              <div class="metric-icon gold"><i class="fa-solid fa-hourglass-half"></i></div>
+              <div class="metric-info">
+                <span class="metric-label">Pending Requests</span>
+                <span class="metric-value" id="metricPendingCount">0</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon green"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="metric-info">
+                <span class="metric-label">Accepted Bookings</span>
+                <span class="metric-value" id="metricAcceptedCount">0</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon gray"><i class="fa-solid fa-calendar-xmark"></i></div>
+              <div class="metric-info">
+                <span class="metric-label">Rejected / Cancelled</span>
+                <span class="metric-value" id="metricRejectedCount">0</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="metric-icon blue"><i class="fa-solid fa-calendar-week"></i></div>
+              <div class="metric-info">
+                <span class="metric-label">Total Bookings</span>
+                <span class="metric-value" id="metricTotalCount">0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bookings Filter Bar -->
+          <div class="dash-filter-bar">
+            <div class="dash-filter-pills">
+              <button class="pill-btn active" data-filter="all" id="filterBtnAll">All (<span id="countPillAll">0</span>)</button>
+              <button class="pill-btn" data-filter="Pending" id="filterBtnPending">Pending (<span id="countPillPending">0</span>)</button>
+              <button class="pill-btn" data-filter="Accepted" id="filterBtnAccepted">Accepted (<span id="countPillAccepted">0</span>)</button>
+              <button class="pill-btn" data-filter="Rejected" id="filterBtnRejected">Rejected (<span id="countPillRejected">0</span>)</button>
+            </div>
+          </div>
+
+          <!-- Bookings List Container -->
+          <div class="dash-bookings-list" id="dashboardBookingsList">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Availability Calendar Manager -->
+        <div class="dash-tab-pane" id="paneDashAvailability" style="display: none;">
+          <div class="availability-manager-intro">
+            <div class="intro-text">
+              <h4>Interactive Availability Scheduler</h4>
+              <p>Click any date to toggle between <strong>Available (Green)</strong> and <strong>Fully Booked / Blocked (Red)</strong>. Changes are saved immediately and updated on your public profile calendar.</p>
+            </div>
+            <div class="calendar-legend-dash">
+              <span class="legend-chip legend-avail"><i class="fa-solid fa-circle"></i> Available (Click to Block)</span>
+              <span class="legend-chip legend-booked"><i class="fa-solid fa-circle"></i> Booked (Click to Open)</span>
+              <span class="legend-chip legend-past"><i class="fa-solid fa-circle"></i> Past Date</span>
+            </div>
+          </div>
+
+          <div id="plannerDashboardCalendarContainer" class="dashboard-calendar-box">
+            <!-- Injected via Calendar Engine in 'planner' mode -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Portfolio Image Lightbox Modal -->
+  <div class="modal-backdrop lightbox-backdrop" id="lightboxModal" style="display: none;" aria-hidden="true">
+    <button class="lightbox-close-btn" id="closeLightboxBtn" aria-label="Close image viewer">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="lightbox-content">
+      <img src="" alt="Portfolio preview full" id="lightboxImage" />
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <!-- Toast Notification System Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Main JavaScript File -->
+  <script src="app.js"></script>
+</body>
+</html>
